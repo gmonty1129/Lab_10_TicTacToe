@@ -29,7 +29,7 @@ public class TicTacToe {
                             }
                         }
                     } else {
-                        scanner.next(); // Clear invalid input
+                        scanner.next();
                     }
                     System.out.println("Invalid move. Try again.");
                 }
@@ -51,7 +51,7 @@ public class TicTacToe {
             }
 
             System.out.println("Do you want to play again? (yes/no)");
-            scanner.nextLine(); // Clear buffer
+            scanner.nextLine();
             if (scanner.nextLine().equalsIgnoreCase("yes")) {
                 playAgain = true;
             }
@@ -86,10 +86,10 @@ public class TicTacToe {
     }
 
     private static boolean checkWin(int row, int col) {
-        return (board[row][0] == currentPlayer && board[row][1] == currentPlayer && board[row][2] == currentPlayer) ||  // Row win
-                (board[0][col] == currentPlayer && board[1][col] == currentPlayer && board[2][col] == currentPlayer) ||  // Column win
-                (row == col && board[0][0] == currentPlayer && board[1][1] == currentPlayer && board[2][2] == currentPlayer) ||  // Main diagonal win
-                (row + col == 2 && board[0][2] == currentPlayer && board[1][1] == currentPlayer && board[2][0] == currentPlayer); // Anti-diagonal win
+        return (board[row][0] == currentPlayer && board[row][1] == currentPlayer && board[row][2] == currentPlayer) ||
+                (board[0][col] == currentPlayer && board[1][col] == currentPlayer && board[2][col] == currentPlayer) ||
+                (row == col && board[0][0] == currentPlayer && board[1][1] == currentPlayer && board[2][2] == currentPlayer) ||
+                (row + col == 2 && board[0][2] == currentPlayer && board[1][1] == currentPlayer && board[2][0] == currentPlayer);
     }
 
     private static void togglePlayer() {
